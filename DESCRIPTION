@@ -1,10 +1,10 @@
-Package: beckman.coulter
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Package: tinyPSA
+Title: Easy reading of Particle Size Analysis data and GRADISTAT helper
+Version: 0.0.0.9001
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+    person("Maurycy", "Żarczyński", , "maurycy.zarczynski@ug.edu.pl", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-2989-8152"))
+Description: Easy reading of Particle Size Analysis data and GRADISTAT (Blott S.J., Pye K., 2001) helper.
 License: MIT + file LICENSE
 Suggests: 
     testthat (>= 3.0.0)
