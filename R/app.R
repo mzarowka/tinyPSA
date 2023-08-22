@@ -3,6 +3,7 @@ library(shinyFiles)
 library(bslib)
 library(fs)
 library(DT)
+library(tinyPSA)
 
 ui <- bslib::page_sidebar(
   theme = bs_theme(bootswatch = "zephyr"),
@@ -53,4 +54,4 @@ server <- function(input, output, session) {
   output$dataCsv <- renderDataTable(data_csv())
 }
 
-shinyApp(ui, server, options = list(launch.browser = TRUE))
+shinyApp(ui, server)
