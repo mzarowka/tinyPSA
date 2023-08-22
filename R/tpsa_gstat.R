@@ -1,10 +1,10 @@
-#' Read GRADISTAT data and save to Excel
+#' Read GRADISTAT data and save to Excel file
 #'
 #' @param path path to single file or directory
 #'
 #' @return  tibble with cleaned data
 #' @export
-cb_gstat_read <- function(path){
+tpsa_gstat_read <- function(path){
   # Get file name
   file_name <- basename(path) |>
     # Remove extension

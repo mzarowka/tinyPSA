@@ -13,22 +13,22 @@ knitr::opts_chunk$set(
 )
 ```
 
-# beckman.coulter
+# tinyPSA
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-[![CRAN status](https://www.r-pkg.org/badges/version/beckman.coulter)](https://CRAN.R-project.org/package=beckman.coulter)
+[![CRAN status](https://www.r-pkg.org/badges/version/beckman.coulter)](https://CRAN.R-project.org/package=tinyPSA)
 <!-- badges: end -->
 
-The goal of beckman.coulter is to ...
+The goal of tinyPSA is to ...
 
 ## Installation
 
-You can install the development version of beckman.coulter from [GitHub](https://github.com/) with:
+You can install the development version of tinyPSA from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("mzarowka/beckman.coulter")
+devtools::install_github("mzarowka/tinyPSA")
 ```
 
 ## Example
@@ -36,7 +36,7 @@ devtools::install_github("mzarowka/beckman.coulter")
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-library(beckman.coulter)
+library(tinyPSA)
 ## basic example code
 ```
 

@@ -5,7 +5,7 @@
 #'
 #' @return a tibble with cleaned data
 #' @export
-cb_read <- function(path, mode) {
+tpsa_read <- function(path, mode) {
   if (mode == "file") {
     # Get file name
     file_name <- basename(path) |>
@@ -35,7 +35,7 @@ cb_read <- function(path, mode) {
 
   } else {
     # List all files in the directory and provide extension for globbing
-    files <- fs::dir_ls(path, glob = "*.csv")
+    files <- fs::dir_ls(path, glob = "*.csv", recurse = TRUE)
 
     # Get file names == sample names
     file_names <- fs::path_file(files) |>

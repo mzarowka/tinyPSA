@@ -2,16 +2,15 @@ library(shiny)
 library(shinyFiles)
 library(bslib)
 library(fs)
-library(beckman.coulter)
 library(DT)
 
 ui <- bslib::page_sidebar(
-  theme = bs_theme(bootswatch = "minty"),
+  theme = bs_theme(bootswatch = "zephyr"),
   title = "PSA helpers",
   sidebar = bslib::sidebar(
-    shinyDirButton("directory", "Folder select", "Please select a folder", icon = shiny::icon("folder")),
+    shinyDirButton("directory", "Folder select", "Please select a directory containing your CSV files", icon = shiny::icon("folder")),
 
-    shinyFilesButton("file", "File select", "Please select a file", multiple = FALSE, icon = shiny::icon("file"))
+    shinyFilesButton("file", "File select", "Please select a GRADISTAT XLSM file", multiple = FALSE, icon = shiny::icon("file"))
     ),
     bslib::card(
       textOutput("dirPath"),
@@ -29,7 +28,7 @@ server <- function(input, output, session) {
 
   output$dirPath <- renderPrint({
     if (is.integer(input$directory)) {
-      cat("No directory has been selected (shinyDirChoose)")
+      cat("No directory has been selected yet.")
     } else {
       parseDirPath(volumes, input$directory)
     }
@@ -37,7 +36,7 @@ server <- function(input, output, session) {
 
   output$filePath <- renderPrint({
     if (is.integer(input$file)) {
-      cat("No file has been selected (shinyFileChoose)")
+      cat("No file has been selected yet.")
     } else {
       parseFilePaths(volumes, input$file)
     }
@@ -48,7 +47,7 @@ server <- function(input, output, session) {
   })
 
   data_csv <- reactive({
-    beckman.coulter::cb_read(dirpath(), mode = "directory")
+    tinyPSA::tpsa_read(dirpath(), mode = "directory")
   })
 
   output$dataCsv <- renderDataTable(data_csv())
