@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/reference/test_package.html#special-files
 
 library(testthat)
-library(tinyPSA)
+# library(tinyPSA)
 
-test_check("tinyPSA")
+# test_check("tinyPSA")

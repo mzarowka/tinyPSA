@@ -3,7 +3,6 @@ library(shinyFiles)
 library(bslib)
 library(fs)
 library(DT)
-library(tinyPSA)
 
 ui <- bslib::page_sidebar(
   theme = bs_theme(bootswatch = "zephyr"),
@@ -18,7 +17,7 @@ ui <- bslib::page_sidebar(
 
       textOutput("filePath")
     ),
-  card(DT::dataTableOutput("dataCsv", height = "30%" ))
+  card(DT::dataTableOutput("dataCsv", height = "30%"))
   )
 
 server <- function(input, output, session) {
@@ -48,7 +47,7 @@ server <- function(input, output, session) {
   })
 
   data_csv <- reactive({
-    tinyPSA::tpsa_read(dirpath(), mode = "directory")
+    tpsa_read(dirpath(), mode = "directory")
   })
 
   output$dataCsv <- renderDataTable(data_csv())

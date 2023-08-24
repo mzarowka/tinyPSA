@@ -52,3 +52,15 @@ tpsa_gstat_read <- function(path){
   # Return data
   data
 }
+
+
+#' Populate GRADISTAT file with PSA data
+#'
+#' @param path path to clean PSA data.
+#' @param gradistat path to empty GRADISTAT file.
+#'
+#' @return  invisible tibble with fitting GRADISTAT data structure.
+#' @export
+tpsa_gstat_populate <- function(path, gradistat){
+
+}
