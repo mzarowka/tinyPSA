@@ -3,6 +3,7 @@ library(shinyFiles)
 library(bslib)
 library(fs)
 library(DT)
+library(xlsx)
 
 ui <- bslib::page_sidebar(
   theme = bs_theme(bootswatch = "zephyr"),
