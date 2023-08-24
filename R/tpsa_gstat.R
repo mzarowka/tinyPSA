@@ -75,6 +75,12 @@ tpsa_gstat_populate <- function(path, gradistat){
   cli::cli_alert_info("Reading data and GRADISTAT files: {file_data} and {file_gradistat}.")
 
   # Read data
+
+  # Read GRADISTAT
+
+  # Write to GRADISTAT
+
+  # Read data
   data <- path |>
     # Read data anchored at cell C4
     readxl::read_excel(sheet = "Multiple Sample Statistics",
