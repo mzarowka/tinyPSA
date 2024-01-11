@@ -23,8 +23,8 @@ You can install the development version of tinyPSA from
 [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("mzarowka/tinyPSA")
+# install.packages("pak")
+pak::pak("mzarowka/tinyPSA")
 ```
 
 There are three main functions:
@@ -34,3 +34,9 @@ There are three main functions:
 - `tpsa_gstat_populate()` for populating GRADISTAT.
 
 - `tpsa_gstat_read()` for cleaning GRADISTAT output.
+
+And a helper shiny dashboard
+
+``` r
+tinyPSA::tpsa_app()
+```

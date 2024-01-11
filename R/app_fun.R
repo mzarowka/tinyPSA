@@ -21,7 +21,8 @@ tpsa_app <- function(...){
   library(xlsx)
 
 ui <- bslib::page_sidebar(
-  theme = bs_theme(bootswatch = "zephyr"),
+  input_dark_mode(),
+  #theme = bs_theme(bootswatch = "zephyr"),
   title = "PSA helpers",
   sidebar = bslib::sidebar(
     shinyDirButton("directory", "Folder select", "Please select a directory containing your CSV files", icon = shiny::icon("folder")),
@@ -33,7 +34,8 @@ ui <- bslib::page_sidebar(
 
     textOutput("filePath")
   ),
-  card(DT::dataTableOutput("dataCsv", height = "30%"))
+  card(DT::dataTableOutput("dataCsv", height = "30%")),
+  card(DT::dataTableOutput("dataGradistat", height = "30%"))
 )
 
 server <- function(input, output, session) {
@@ -62,11 +64,21 @@ server <- function(input, output, session) {
     parseDirPath(volumes, input$directory)
   })
 
+  filepath <- reactive({
+    parseFilePaths(volumes, input$file)
+  })
+
   data_csv <- reactive({
     tpsa_read(dirpath(), mode = "directory")
   })
 
+  data_gradistat <- reactive({
+    tpsa_gstat_read(dplyr::pull(filepath(), 4))
+  })
+
   output$dataCsv <- renderDataTable(data_csv())
+
+  output$dataGradistat <- renderDataTable(data_gradistat())
 }
 
 shinyApp(ui, server)
