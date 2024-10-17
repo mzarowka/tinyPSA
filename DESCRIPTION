@@ -20,7 +20,9 @@ Imports:
     fs,
     purrr,
     readxl,
+    rJava,
     shiny,
     tidyr,
     vroom,
-    writexl
+    writexl,
+    xlsx
